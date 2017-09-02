@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="player2.css">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaijaan|Roboto+Mono" rel="stylesheet">
+    <title>2 Players</title>
+  </head>
+  <body>
+    <h1>League of Hangman: 2 Player Edition</h1>
+
+    <div class="numberWrong">Missed Guesses:</div>
+    <div class="scoreboard">
+      <p id="win">Wins:</p>
+      <p id="loss">Losses:</p>
+    </div>
+
+    <div class="gameBoard">
+      <div class="revealWord"></div>
+    </div>
+
+    <div id="start">
+      <input type="password" class="input" placeholder="Enter word(s) here">
+      <button type="button" id="inputB">Begin</button>
+      <button type="button" id="rematch">Rematch</button>
+      <input type="text" class="guess" placeholder="Enter guess here">
+      <button type="button" id="guessB">Guess</button>
+    </div>
+
+    <button type="button" class="button" id="homeB">Home Page</button>
+
+    <div id="player">
+        <audio autoplay hidden>
+        <source id="theme" src="../music/Bit_Rush.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+    <script src="player2.js"></script>
+  </body>
+</html>

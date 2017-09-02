@@ -1,0 +1,107 @@
+body{
+  background-image: url("../images/arcadeahri.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
+
+@font-face{
+  font-family: '8-BIT WONDER';
+  src: url('../8-BIT_WONDER.ttf');
+}
+
+h1{
+  text-align: center;
+  font-family: '8-BIT WONDER';
+  font-size: 175%;
+  color: rgb(58, 99, 251);
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+}
+
+p{
+  margin-bottom: 2vh;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  margin-left: 2vw;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.gameBoard{
+  margin-top: 20vh;
+  margin-bottom: 20vh;
+  text-align: center;
+  font-size: 400%;
+}
+
+.revealWord{
+  margin: 0;
+}
+
+#start{
+  margin-top: 10vh;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#rematch, #newB, #guessB, #homeB{
+  margin-right: 10vw;
+  height: 40px;
+  width: 90px;
+  text-decoration: none;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 100%;
+  box-shadow: -2px 0 black, 0 2px black, 0 -2px black, 2px 0 black, 5px 5px black;
+}
+
+#homeB{
+  margin-right: 0px;
+  margin-top: 3vh;
+  margin-left: 41vw;
+  background-color: rgb(57, 99, 249);
+}
+
+#rematch{
+  background-color: orange;
+}
+
+#newB{
+  background-color: purple;
+}
+
+.numberWrong{
+  float: left;
+  margin-left: 1vw;
+  margin-bottom: 0px;
+  padding: 0px;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 130%;
+}
+
+.scoreboard{
+  margin-top: 0px;
+  color: white;
+}
+
+.scoreboard p{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.disabled{
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.revealWord{
+  font-family: 'Baloo Bhaijaan', cursive;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  color: orange;
+}

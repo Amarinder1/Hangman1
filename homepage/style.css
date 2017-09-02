@@ -1,0 +1,67 @@
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url('../images/ziggs2.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@font-face{
+  font-family: '8-BIT WONDER';
+  src: url('../8-BIT_WONDER.ttf');
+}
+
+h1{
+  text-align: center;
+  color: rgb(87, 133, 251);
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  font-family: '8-BIT WONDER';
+}
+
+#instructions {
+  position: fixed;
+  z-index: 1;
+  font-size: 15px;
+  background-color: rgb(80, 45, 115);
+  color: magenta;
+  border: 1px solid black;
+  top: -1px;
+  left: 10px;
+  padding: 20px 0 10px 20px;
+  line-height: 26px;
+  display: none;
+  box-shadow: -2px 0 black, 0 2px black, 0 -2px black, 2px 0 black, 5px 5px black;
+}
+
+.instructions{
+  position: fixed;
+  z-index: 1;
+  padding: 2px;
+  background-color: magenta;
+  border: 1px solid black;
+  top: 0;
+  left: 20px;
+  box-shadow: -2px 0 black, 0 2px black, 0 -2px black, 2px 0 black, 3px 3px black;
+}
+
+.button{
+  height: 50px;
+  width: 110px;
+  margin-left: 45vw;
+  margin-bottom: 10vh;
+  text-decoration: none;
+  border: none;
+  color: white;
+  font-size: 100%;
+  box-shadow: -2px 0 black, 0 2px black, 0 -2px black, 2px 0 black, 3px 3px black;
+}
+
+#player1{
+  margin-top: 30vh;
+  background-color: rgb(153, 74, 183);
+}
+
+#player2{
+  background-color: rgb(54, 124, 226);
+}

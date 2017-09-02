@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Hangman</title>
+  </head>
+  <body>
+    <h1>League of Hangman</h1>
+
+    <div id="instructions">
+      <p>Choose either 1 player mode or 2 player mode
+      <br>If you choose 1 player, you will have to guess random phrases
+      <br>If you choose 2 players, one person will choose a word and the other will guess the word
+      <br>Click the home button to come back to this page
+      </p>
+    </div>
+    <div class="instructions" id="show">How to Play</div>
+    <div class="instructions" id="hide" style="display:none">Done</div>
+
+    <button type="button" class="button" id="player1">1 Player</button>
+    <button type="button" class="button" id="player2">2 Players</button>
+
+    <div id="player">
+        <audio autoplay hidden>
+        <source id="theme" src="../music/Nitro_Fun.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+  </body>
+</html>
