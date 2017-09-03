@@ -32,6 +32,7 @@ h1{
   line-height: 26px;
   display: none;
   box-shadow: -2px 0 black, 0 2px black, 0 -2px black, 2px 0 black, 5px 5px black;
+  font-family: '8-BIT WONDER';
 }
 
 .instructions{
@@ -43,6 +44,7 @@ h1{
   top: 0;
   left: 20px;
   box-shadow: -2px 0 black, 0 2px black, 0 -2px black, 2px 0 black, 3px 3px black;
+  font-family: '8-BIT WONDER';
 }
 
 .button{
