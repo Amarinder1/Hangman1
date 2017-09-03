@@ -7,13 +7,13 @@ body{
 }
 
 @font-face{
-  font-family: '8-BIT WONDER';
-  src: url('../8-BIT_WONDER.ttf');
+  font-family: 'PressStart';
+  src: url('../PressStart2P.ttf');
 }
 
 h1{
   text-align: center;
-  font-family: '8-BIT WONDER';
+  font-family: 'PressStart';
   font-size: 175%;
   color: rgb(58, 99, 251);
   text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
@@ -25,7 +25,7 @@ p{
   margin-bottom: 0px;
   padding-bottom: 0px;
   margin-left: 2vw;
-  font-family: '8-BIT WONDER';
+  font-family: 'PressStart';
 }
 
 .gameBoard{
@@ -86,7 +86,7 @@ p{
   color: white;
   font-weight: bold;
   font-size: 130%;
-  font-family: '8-BIT WONDER';
+  font-family: 'PressStart';
 }
 
 .scoreboard{
