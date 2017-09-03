@@ -41,9 +41,9 @@ function getWord(){
     return false;
   }
   else if (!isNaN(answer)){
-    alert("You can't have the person guess a number!");
+    alert("You can't have the other person guess a number!");
     begin();
-    return false
+    return false;
   }
   else{
     arrayAnswer = answer.split('');
