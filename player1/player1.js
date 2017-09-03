@@ -156,7 +156,7 @@ function rematch(){
   final = '';
   finalAnswer.text('');
   numWrong.text('Missed Guesses: ');
-  finalAnswer.css('color', 'black');
+  finalAnswer.css('color', 'orange');
   newButton.prop('disabled', false);
 }
 
