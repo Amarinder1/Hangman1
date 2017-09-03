@@ -8,15 +8,15 @@ body{
 }
 
 @font-face{
-  font-family: '8-BIT WONDER';
-  src: url('../8-BIT_WONDER.ttf');
+  font-family: 'PressStart';
+  src: url('../PressStart2P.ttf');
 }
 
 h1{
   text-align: center;
   color: rgb(87, 133, 251);
   text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
-  font-family: '8-BIT WONDER';
+  font-family: 'PressStart';
 }
 
 #instructions {
@@ -32,6 +32,7 @@ h1{
   line-height: 26px;
   display: none;
   box-shadow: -2px 0 black, 0 2px black, 0 -2px black, 2px 0 black, 5px 5px black;
+  font-family: 'PressStart';
 }
 
 .instructions{
@@ -43,6 +44,7 @@ h1{
   top: 0;
   left: 20px;
   box-shadow: -2px 0 black, 0 2px black, 0 -2px black, 2px 0 black, 3px 3px black;
+  font-family: 'PressStart';
 }
 
 .button{
