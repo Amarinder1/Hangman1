@@ -165,7 +165,7 @@ function rematch(){
   final = '';
   finalAnswer.text('');
   numWrong.text('Missed Guesses: ');
-  finalAnswer.css('color', 'black');
+  finalAnswer.css('color', 'rgb(221, 140, 63)');
 }
 
 //checks to see if user has won 3 or more games in a row
