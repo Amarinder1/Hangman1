@@ -40,6 +40,11 @@ function getWord(){
     begin();
     return false;
   }
+  else if (!isNaN(answer)){
+    alert("You can't have the person guess a number!");
+    begin();
+    return false
+  }
   else{
     arrayAnswer = answer.split('');
     console.log(arrayAnswer);
@@ -88,6 +93,9 @@ function getGuess(){
   guess = guessInput.val().toLowerCase();
   if(guess.trim() == ''){
     alert('Guess a letter!!');
+  }
+  else if (!isNaN(guess)){
+    alert("Your guess can't be a number!");
   }
   else{
     if (guess.length == 1){
