@@ -77,6 +77,9 @@ function getGuess(){
   if(guess.trim() == ''){
     alert('Guess a letter!!');
   }
+  else if (!isNaN(guess)){
+    alert("Your guess can't be a number!");
+  }
   else{
     if (guess.length == 1){
       arrayGuess.unshift(guess);
