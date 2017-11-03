@@ -4,6 +4,7 @@ body{
   background-image: url('../images/arcadelol.png');
   background-size: cover;
   background-repeat: no-repeat;
+  height: 100vh;
 }
 
 @font-face{

@@ -4,6 +4,7 @@ body{
   background-size: cover;
   display: flex;
   flex-direction: column;
+  height: 100vh;
 }
 
 @font-face{
@@ -30,9 +31,10 @@ p{
 
 .gameBoard{
   margin-top: 20vh;
-  margin-bottom: 20vh;
+  margin-bottom: 10vh;
   text-align: center;
   font-size: 400%;
+  height: 20vh;
 }
 
 .revealWord{

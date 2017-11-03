@@ -5,6 +5,7 @@ body{
   background-image: url('../images/ziggs2.png');
   background-repeat: no-repeat;
   background-size: cover;
+  height: 100vh;
 }
 
 @font-face{
