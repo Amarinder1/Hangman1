@@ -3,12 +3,14 @@ var hide = $('#hide');
 var p1 = $('#player1');
 var p2 = $('#player2');
 
+//shows instructions
 function show(){
   $('#instructions').slideDown();
   howTo.attr('style', 'display: none');
   hide.attr('style', 'display: block');
 }
 
+//hides instructions
 function hides(){
   $('#instructions').slideUp();
   hide.attr('style', 'display: none');

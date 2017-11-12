@@ -3,12 +3,12 @@ var guessInput = $('#start').find('.guess');
 var rematchButton = $('#start').find('#rematch');
 var newButton = $('#start').find('#newB');
 var homeButton = $('#homeB');
-var finalAnswer = $('.gameBoard').find('.revealWord');
+var finalAnswer = $('.gameBoard').find('.revealWord'); //will display letters correcly guessed, dashes of letters to be guessed, or victory/loss message
 var body = $('body');
 var numWrong = $('.numberWrong');
 var vicTag = $('.scoreboard').find('#win');
 var lossTag = $('.scoreboard').find('#loss');
-var hard = ['Hard Pill to Swallow', 'Throw in the Towel', 'Jumping the Gun', 'Back to Square One',
+var randomWord = ['Hard Pill to Swallow', 'Throw in the Towel', 'Jumping the Gun', 'Back to Square One',
 'Elvis has left the Building', 'The Jig is Up', 'A Chip on Your Shoulder', 'Love Birds','Fit as a fiddle',
 'Every Cloud Has a silver Lining', 'Hands Down', 'Heads Up', 'Down for the Count', 'Burst Your Bubble',
 'Knuckle Down', 'Needle in a haystack', 'Down to the Wire', 'Top Drawer', 'Foaming at the Mouth',
@@ -18,13 +18,13 @@ var hard = ['Hard Pill to Swallow', 'Throw in the Towel', 'Jumping the Gun', 'Ba
 'Bless Up', 'I love you Asahd', 'Stay away from THEY', 'Making my way downtown', 'It is time to Duel',
 'Pikachu I Choose You', 'I am a Barbie Girl in a Barbie World'];
 
-var guess = '';
-var answer = '';
-var arrayAnswer = [];//what user inputs as word to be guessed
-var arrayGuess = [];//what second person guesses
-var arrayFinal = [];//used to create the game board
+var guess = '';//variable that will hold the user's newest guess
+var answer = '';// random word that is chosen
+var arrayAnswer = [];//takes word stored in chosen and splits into letters, and put into this array
+var arrayGuess = [];//total list of all the guesses the user makes
+var arrayFinal = [];//used to create the game board. Will only contain spaces or dashes
 var wrong = 0;//counter for wrong guesses
-var final;
+var final; //stores correctly guessed letters. Will be compared the answer variable.
 var loss = 0;//number of game losses
 var victory = 0;//number of games wins
 var numGames = 0;//counter for games won in a row
@@ -37,7 +37,8 @@ function begin(){
 }
 
 begin();
-//checking if the guess the user makes is a new letter or a letter that was already guessed
+
+//checks if the guess the user makes is a new letter or a letter that was already guessed
 function checkGuess(){
   for (var i = arrayGuess.length; i > 0; i --){
     if (arrayGuess[i] === arrayGuess[0]){
@@ -82,8 +83,8 @@ function getGuess(){
   }
   else{
     if (guess.length == 1){
+      //The unshift methods adds letter guessed to the begnning of arrayGuess
       arrayGuess.unshift(guess);
-      console.log(arrayGuess);
       guessInput.val('');
       compareLetter();
     }
@@ -94,12 +95,13 @@ function getGuess(){
 }
 
 //creates the game board
-//will create game board that will take multiple words after!!!!!
 function createGameBoard(){
   for (var i = 0; i < arrayAnswer.length; i++){
+    //if word/phrase has a space, gameboard will create a space
     if (answer[i] == ' '){
       arrayFinal.push(' ');
     }
+    //else, gameboard will create a dash (-)
     else{
       arrayFinal.push('-');
     }
@@ -115,6 +117,7 @@ function revealLetter(){
       final = arrayFinal.join('');
     }
   }
+  //using append method would create commas, so used text method instead
   finalAnswer.text(final);
 }
 
@@ -163,15 +166,16 @@ function rematch(){
   newButton.prop('disabled', false);
 }
 
-//when user clicks 'hard mode button', will generate random word to guess
+//When user clicks New Word, will generate random word to guess.
+//That random word will be stored in the answer variable.
+//And the random word will be split into letters and stored in arrayAnswer
 function startNew(){
   solidGuess();
   newButton.addClass('disabled', true);
   newButton.prop('disabled', true);
-  answer = hard[Math.floor(Math.random()*hard.length)].toLowerCase();
+  answer = randomWord[Math.floor(Math.random()*randomWord.length)].toLowerCase();
   arrayAnswer = answer.split('');
   createGameBoard();
-  console.log(arrayAnswer);
 }
 
 //checks to see if user has won 3 or more games in a row

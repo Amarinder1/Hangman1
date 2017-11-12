@@ -2,7 +2,7 @@ var wordButton = $('#start').find('#inputB');
 var wordInput = $('#start').find('.input');
 var guessButton = $('#start').find('#guessB');
 var guessInput = $('#start').find('.guess');
-var finalAnswer = $('.gameBoard').find('.revealWord');
+var finalAnswer = $('.gameBoard').find('.revealWord'); //will display letters correcly guessed, dashes of letters to be guessed, or victory/loss message
 var body = $('body');
 var numWrong = $('.numberWrong');
 var rematchButton = $('#start').find('#rematch');
@@ -10,13 +10,13 @@ var vicTag = $('.scoreboard').find('#win');
 var lossTag = $('.scoreboard').find('#loss');
 var homeButton = $('#homeB');
 
-var guess = '';
-var answer = '';
-var arrayAnswer = [];//what user inputs as word to be guessed
-var arrayGuess = [];//what second person guesses
-var arrayFinal = [];//used to create the game board
+var guess = '';//variable that will hold the user's newest guess
+var answer = '';//stores word/phrase from the wordInput variable
+var arrayAnswer = [];//takes word stored in chosen and splits into letters, and put into this array
+var arrayGuess = [];//total list of all the guesses the user makes
+var arrayFinal = [];//used to create the game board. Will only contain spaces or dashes
 var wrong = 0;//counter for wrong guesses
-var final;
+var final; //stores correctly guessed letters. Will be compared the answer variable.
 var loss = 0;//number of game losses
 var victory = 0;//number of games wins
 var numGames = 0;//counter for games won in a row
@@ -29,6 +29,7 @@ function begin(){
 }
 
 begin();
+
 //getting word(s) to guess from user, splits it into charcters and put them in an array
 //also checks if word is a space
 function getWord(){
@@ -99,6 +100,7 @@ function getGuess(){
   }
   else{
     if (guess.length == 1){
+      //The unshift methods adds letter guessed to the begnning of arrayGuess
       arrayGuess.unshift(guess);
       console.log(arrayGuess);
       guessInput.val('');
@@ -111,12 +113,13 @@ function getGuess(){
 }
 
 //creates the game board
-//will create game board that will take multiple words after!!!!!
 function createGameBoard(){
   for (var i = 0; i < arrayAnswer.length; i++){
+    //if word/phrase has a space, gameboard will create a space
     if (answer[i] == ' '){
       arrayFinal.push(' ');
     }
+    //else gameboard will create a dash
     else{
       arrayFinal.push('-');
     }
