@@ -20,7 +20,7 @@ var randomWord = ['Hard Pill to Swallow', 'Throw in the Towel', 'Jumping the Gun
 
 var guess = '';//variable that will hold the user's newest guess
 var answer = '';// random word that is chosen
-var arrayAnswer = [];//takes word stored in chosen and splits into letters, and put into this array
+var arrayAnswer = [];//takes word stored in var answer and splits into letters, and put into this array
 var arrayGuess = [];//total list of all the guesses the user makes
 var arrayFinal = [];//used to create the game board. Will only contain spaces or dashes
 var wrong = 0;//counter for wrong guesses
@@ -37,6 +37,56 @@ function begin(){
 }
 
 begin();
+
+//When user clicks New Word, will generate random word to guess.
+//That random word will be stored in the answer variable.
+//And the random word will be split into letters and stored in arrayAnswer
+function startNew(){
+  solidGuess();
+  newButton.addClass('disabled', true);
+  newButton.prop('disabled', true);
+  answer = randomWord[Math.floor(Math.random()*randomWord.length)].toLowerCase();
+  arrayAnswer = answer.split('');
+  createGameBoard();
+}
+
+//creates the game board
+function createGameBoard(){
+  for (var i = 0; i < arrayAnswer.length; i++){
+    //if word/phrase has a space, gameboard will create a space
+    if (answer[i] == ' '){
+      arrayFinal.push(' ');
+    }
+    //else, gameboard will create a dash (-)
+    else{
+      arrayFinal.push('-');
+    }
+  }
+  finalAnswer.append(arrayFinal);
+}
+
+//getting a letter guess from user and putting it into an array
+//also checks if user puts in more than 1 charcter or a space
+function getGuess(){
+  guess = guessInput.val().toLowerCase();
+  if(guess.trim() == ''){
+    alert('Guess a letter!!');
+  }
+  else if (!isNaN(guess)){
+    alert("Your guess can't be a number!");
+  }
+  else{
+    if (guess.length == 1){
+      //The unshift methods adds letter guessed to the begnning of arrayGuess
+      arrayGuess.unshift(guess);
+      guessInput.val('');
+      compareLetter();
+    }
+    else{
+      alert("You can only guess 1 letter at a time");
+    }
+  }
+}
 
 //checks if the guess the user makes is a new letter or a letter that was already guessed
 function checkGuess(){
@@ -69,44 +119,6 @@ function compareLetter(){
       }
     }
   }
-}
-
-//getting a letter guess from user and putting it into an array
-//also checks if user puts in more than 1 charcter or a space
-function getGuess(){
-  guess = guessInput.val().toLowerCase();
-  if(guess.trim() == ''){
-    alert('Guess a letter!!');
-  }
-  else if (!isNaN(guess)){
-    alert("Your guess can't be a number!");
-  }
-  else{
-    if (guess.length == 1){
-      //The unshift methods adds letter guessed to the begnning of arrayGuess
-      arrayGuess.unshift(guess);
-      guessInput.val('');
-      compareLetter();
-    }
-    else{
-      alert("You can only guess 1 letter at a time");
-    }
-  }
-}
-
-//creates the game board
-function createGameBoard(){
-  for (var i = 0; i < arrayAnswer.length; i++){
-    //if word/phrase has a space, gameboard will create a space
-    if (answer[i] == ' '){
-      arrayFinal.push(' ');
-    }
-    //else, gameboard will create a dash (-)
-    else{
-      arrayFinal.push('-');
-    }
-  }
-  finalAnswer.append(arrayFinal);
 }
 
 //will show the correct letter
@@ -164,18 +176,6 @@ function rematch(){
   numWrong.text('Missed Guesses: ');
   finalAnswer.css('color', 'orange');
   newButton.prop('disabled', false);
-}
-
-//When user clicks New Word, will generate random word to guess.
-//That random word will be stored in the answer variable.
-//And the random word will be split into letters and stored in arrayAnswer
-function startNew(){
-  solidGuess();
-  newButton.addClass('disabled', true);
-  newButton.prop('disabled', true);
-  answer = randomWord[Math.floor(Math.random()*randomWord.length)].toLowerCase();
-  arrayAnswer = answer.split('');
-  createGameBoard();
 }
 
 //checks to see if user has won 3 or more games in a row

@@ -55,6 +55,45 @@ function getWord(){
   }
 }
 
+//creates the game board
+function createGameBoard(){
+  for (var i = 0; i < arrayAnswer.length; i++){
+    //if word/phrase has a space, gameboard will create a space
+    if (answer[i] == ' '){
+      arrayFinal.push(' ');
+    }
+    //else gameboard will create a dash
+    else{
+      arrayFinal.push('-');
+    }
+  }
+  finalAnswer.append(arrayFinal);
+}
+
+//getting a letter guess from user and putting it into an array
+//also checks if user puts in more than 1 charcter or a space
+function getGuess(){
+  guess = guessInput.val().toLowerCase();
+  if(guess.trim() == ''){
+    alert('Guess a letter!!');
+  }
+  else if (!isNaN(guess)){
+    alert("Your guess can't be a number!");
+  }
+  else{
+    if (guess.length == 1){
+      //The unshift methods adds letter guessed to the begnning of arrayGuess
+      arrayGuess.unshift(guess);
+      console.log(arrayGuess);
+      guessInput.val('');
+      compareLetter();
+    }
+    else{
+      alert("You can only guess 1 letter at a time");
+    }
+  }
+}
+
 //checking if the guess the user makes is a new letter or a letter that was already guessed
 function checkGuess(){
   for (var i = arrayGuess.length; i > 0; i --){
@@ -86,45 +125,6 @@ function compareLetter(){
       }
     }
   }
-}
-
-//getting a letter guess from user and putting it into an array
-//also checks if user puts in more than 1 charcter or a space
-function getGuess(){
-  guess = guessInput.val().toLowerCase();
-  if(guess.trim() == ''){
-    alert('Guess a letter!!');
-  }
-  else if (!isNaN(guess)){
-    alert("Your guess can't be a number!");
-  }
-  else{
-    if (guess.length == 1){
-      //The unshift methods adds letter guessed to the begnning of arrayGuess
-      arrayGuess.unshift(guess);
-      console.log(arrayGuess);
-      guessInput.val('');
-      compareLetter();
-    }
-    else{
-      alert("You can only guess 1 letter at a time");
-    }
-  }
-}
-
-//creates the game board
-function createGameBoard(){
-  for (var i = 0; i < arrayAnswer.length; i++){
-    //if word/phrase has a space, gameboard will create a space
-    if (answer[i] == ' '){
-      arrayFinal.push(' ');
-    }
-    //else gameboard will create a dash
-    else{
-      arrayFinal.push('-');
-    }
-  }
-  finalAnswer.append(arrayFinal);
 }
 
 //will show the correct letter
