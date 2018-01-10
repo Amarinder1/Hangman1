@@ -91,11 +91,13 @@ p{
   font-weight: bold;
   font-size: 130%;
   font-family: 'PressStart';
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
 
 .scoreboard{
   margin-top: 0px;
   color: white;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
 
 .scoreboard p{
