@@ -77,7 +77,7 @@ function getGuess(){
   }
   else{
     if (guess.length == 1){
-      //The unshift methods adds letter guessed to the begnning of arrayGuess
+      //The unshift methods adds letter guessed to the beginning of arrayGuess
       arrayGuess.unshift(guess);
       guessInput.val('');
       compareLetter();
@@ -212,6 +212,9 @@ function solidRematch(){
 
 //lets user go back to the home page
 function home(){
+  loss = 0;
+  victory = 0;
+  numGames = 0;
   window.location = '../homepage/index.html';
 }
 

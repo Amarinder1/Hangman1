@@ -239,6 +239,8 @@ guessInput.keyup(function(event){
 
 //when clicked, goes to homepage
 function home(){
+  victory = 0;
+  loss = 0;
   window.location = '../homepage/index.html';
 }
 
